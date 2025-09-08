@@ -492,14 +492,17 @@ int main(void)
 
 				case SDL_EVENT_KEY_UP:
 				case SDL_EVENT_KEY_DOWN:
-					if(event.key.key == SDLK_W)
+					if(event.key.key == SDLK_ESCAPE)
+						quit = true;
+					if(event.key.key == SDLK_W || event.key.key == SDLK_UP)
 						context.btn_pressed_up = event.key.down;
-					if(event.key.key == SDLK_A)
+					if(event.key.key == SDLK_A || event.key.key == SDLK_LEFT)
 						context.btn_pressed_left = event.key.down;
-					if(event.key.key == SDLK_S)
+					if(event.key.key == SDLK_S || event.key.key == SDLK_DOWN)
 						context.btn_pressed_down = event.key.down;
-					if(event.key.key == SDLK_D)
+					if(event.key.key == SDLK_D || event.key.key == SDLK_RIGHT)
 						context.btn_pressed_right = event.key.down;
+
 					if(event.key.key == SDLK_SPACE)
 						context.btn_pressed_space = event.key.down;
 
